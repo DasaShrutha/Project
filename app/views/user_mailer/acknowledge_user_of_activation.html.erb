@@ -1,0 +1,9 @@
+<p>Dear <%= @user.name %>,</p>
+<p>Your account at <%= ENV['WEBSITE_NAME'] %> has been activated. You may now log in by using your username and password at the following link:</p>
+<p><%= link_to "Log into #{ENV['WEBSITE_NAME']}", new_user_session_url %></p>
+
+<br/>
+
+<p>Regards,</p>
+<p><%= ENV['WEBSITE_NAME'] %> team,</p>
+<p>SLIME Lab (NTU, Singapore)</p>

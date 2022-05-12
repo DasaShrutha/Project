@@ -1,0 +1,31 @@
+<div class="regular_title">Edit <%= resource_name.to_s.humanize %></div>
+
+<div class="regular_text">
+	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
+		<%= f.error_notification %>
+
+		<div class="form-inputs">
+			<%= f.input :name, as: :string, label: 'Name', required: true, autofocus: true %>
+			<%= f.input :category, label: 'Category', required: true,
+			            collection: ['Student', 'Researcher', 'Professor', 'Admin/Management', 'Non-NTU Staff'] %>
+
+			<%= f.input :email, required: true, autofocus: true %>
+
+			<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+				<p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+			<% end %>
+
+			<%= f.input :current_password, required: true, input_html: {autocomplete: "off"},
+			            hint: "we need your current password to confirm your changes" %>
+
+			<%= f.input :password, required: false, input_html: {autocomplete: "off"},
+			            hint: "leave it blank if you don't want to change it" %>
+
+			<%= f.input :password_confirmation, required: false, input_html: {autocomplete: "off"} %>
+		</div>
+
+		<div class="form-actions">
+			<%= f.button :submit, "Update" %>
+		</div>
+	<% end %>
+</div>

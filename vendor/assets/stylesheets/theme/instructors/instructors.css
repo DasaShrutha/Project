@@ -1,0 +1,336 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+	3.1 Top Bar
+	3.2 Header Content
+	3.3 Logo
+	3.4 Main Nav
+	3.5 Hamburger
+4. Menu
+5. Home
+6. Intro
+7. Course
+	7.1 Description
+	7.2 Curriculum
+	7.3 Reviews
+	7.4 Members
+8. Sidebar
+9. Footer
+
+
+
+******************************/
+
+/*********************************
+5. Home
+*********************************/
+
+.home
+{
+	width: 100%;
+	height: 430px;
+	background: #f8f8f8;
+}
+
+/*********************************
+6. Video
+*********************************/
+
+.video
+{
+	width: 100%;
+	background: #f8f8f8;
+	padding-bottom: 77px;
+}
+.video_container_outer
+{
+	width: 100%;
+	height: calc(750px / 1.779);
+}
+.video_overlay
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 8;
+	padding-left: 53px;
+	pointer-events: none;
+}
+.video_overlay div
+{
+	font-family: 'Lato', sans-serif;
+	font-size: 90px;
+	font-weight: 700;
+	color: #000000;
+	line-height: 0.75;
+}
+.video_overlay div:last-child
+{
+	color: #2e21df;
+}
+.video_overlay div:not(:last-child)
+{
+	margin-bottom: 33px;
+}
+.video_content
+{
+	/*margin-top: calc(-1 * (750px / 1.875) / 2);*/
+}
+.video_container
+{
+	width: 100%;
+	height: 100%;
+	background: red;
+	box-shadow: 0px 5px 15px rgba(0,0,0,0.05);
+}
+.video-js
+{
+	width: 100% !important;
+	height: 100% !important;
+	overflow: hidden;
+}
+.video-js > div
+{
+	width: 100%;
+	height: 100%;
+}
+.video-js .vjs-tech
+{
+	height: 100% !important;
+}
+.vjs-big-play-button
+{
+	z-index: 9;
+	outline: none;
+}
+.vjs-big-play-button:focus
+{
+	outline: none;
+}
+.vjs-big-play-button:hover
+{
+	-webkit-transform: translate(-50%, -50%) scale(1.05);
+	-moz-transform: translate(-50%, -50%) scale(1.05);
+	-ms-transform: translate(-50%, -50%) scale(1.05);
+	-o-transform: translate(-50%, -50%) scale(1.05);
+	transform: translate(-50%, -50%) scale(1.05);
+}
+.vjs-loading-spinner
+{
+	display: none !important;
+}
+.video-js .vjs-control-bar
+{
+	opacity: 0 !important;
+}
+.vjs-has-started:hover .vjs-control-bar
+{
+	opacity: 1 !important;
+}
+.register_button
+{
+	width: 225px;
+	height: 43px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border: solid 2px #2e21df;
+	border-radius: 3px;
+	margin-top: 80px;
+	cursor: pointer;
+}
+.register_button a
+{
+	display: block;
+	font-family: 'Lato', sans-serif;
+	font-size: 12px;
+	line-height: 39px;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	color: #2e21df;
+	text-transform: uppercase;
+}
+
+/*********************************
+7. Instructors
+*********************************/
+
+.instructors
+{
+	width: 100%;
+	padding-top: 83px;
+	padding-bottom: 30px;
+	background: #f1f1f1;
+}
+.instructors_background
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 567px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.instructors_row
+{
+	margin-top: 79px;
+}
+.instructor
+{
+	padding-top: 40px;
+	padding-bottom: 34px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.instructor_image_container
+{
+	width: 165px;
+	height: 165px;
+	border: solid 14px #FFFFFF;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+	margin-left: auto;
+	margin-right: auto;
+}
+.instructor_image
+{
+	position: absolute;
+	top: -14px;
+	left: -14px;
+	width: 165px;
+	height: 165px;
+}
+.instructor_image img
+{
+	max-width: 100%;
+}
+.instructor_name
+{
+	margin-top: 18px;
+}
+.instructor_name a
+{
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	color: rgba(0,0,0,0.9);
+	font-weight: 700;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.instructor_name a:hover
+{
+	color: #2e21df;
+}
+.instructor_title
+{
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(0,0,0,0.3);
+	margin-top: 5px;
+}
+.instructor_text
+{
+	margin-top: 16px;
+}
+.instructor_social
+{
+	margin-top: 22px;
+}
+.instructor_social ul li
+{
+	display: inline-block;
+}
+.instructor_social ul li:not(:last-child)
+{
+	margin-right: 5px;
+}
+.instructor_social ul li a i
+{
+	font-size: 14px;
+	color: #4f47e2;
+	padding: 6px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.instructor_social ul li a i:hover
+{
+	color: black;
+}
+
+/*********************************
+8. Teachers
+*********************************/
+
+.teachers
+{
+	width: 100%;
+	background: #f8f8f8;
+	padding-top: 129px;
+	padding-bottom: 120px;
+}
+.teachers_row
+{
+	margin-top: 64px;
+}
+.teacher
+{
+	width: 100%;
+	margin-bottom: 30px;
+	background: #FFFFFF;
+	padding-left: 50px;
+	padding-right: 30px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.teacher_image div
+{
+	width: 68px;
+	height: 68px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.teacher_image div img
+{
+	max-width: 100%;
+}
+.teacher_content
+{
+	padding-left: 30px;
+}
+.teacher_name a
+{
+	font-size: 16px;
+	font-weight: 700;
+	color: rgba(0,0,0,0.8);
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.teacher_name a:hover
+{
+	color: #2e21df;
+}
+.teacher_title
+{
+	margin-top: 1px;
+}

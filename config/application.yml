@@ -1,0 +1,36 @@
+# Rails Credentials
+RAILS_MASTER_KEY: 3f80cffcb697551ce2ec731899456cf9
+
+# reCaptcha
+RECAPTCHA_SITE_KEY: 6LcfcHUUAAAAAMCWxwgrGF25be_8q7v6lyAvT77p
+RECAPTCHA_SECRET_KEY: 6LcfcHUUAAAAAN3ZjWJarY7_2G4nWLQsP9SusU94
+
+# SMTP
+SMTP_ADDRESS: smtp.sendgrid.net
+SMTP_PORT: '587'
+SMTP_USERNAME: apikey
+SMTP_PASSWORD: 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
+
+ADMIN_EMAIL: 'probsoltechnology@gmail.com'
+DEFAULT_FROM_EMAIL: 'admin@ntu.org'
+
+WEBSITE_NAME: LASeR
+WEBSITE_SUBTITLE: Long Amplicon Sequence Repository
+
+development:
+    HOST_URL: localhost:3000
+    SEQUENCESERVER_MOUNT_PATH: '#'
+    BLAST_DB_DIRECTORY: '#'
+
+production:
+    DB_HOST: 172.21.10.36
+    DB_PORT: '5432'
+    DB_USERNAME: postgres
+    DB_PASSWORD: postgres
+    HOST_URL: laser.ase.ntu.edu.sg
+    RACK_ENV: production
+    RAILS_ENV: production
+    RAILS_LOG_TO_STDOUT: enabled
+    RAILS_SERVE_STATIC_FILES: enabled
+    SEQUENCESERVER_MOUNT_PATH: search
+    BLAST_DB_DIRECTORY: /home/scadmin/blast-db

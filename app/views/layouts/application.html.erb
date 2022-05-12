@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= (@title.present? ? "#{@title} | " : '') %><%= ENV['WEBSITE_NAME'] %></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
+
+	<%= stylesheet_link_tag 'application' %>
+	<% (@stylesheets || []).each do |stylesheet| %>
+		<%= stylesheet_link_tag stylesheet %>
+	<% end %>
+
+	<%= javascript_include_tag 'application' %>
+	<% (@javascripts || []).each do |javascript| %>
+		<%= javascript_include_tag javascript %>
+	<% end %>
+	<%= javascript_include_tag 'https://cdn.jsdelivr.net/gh/oshopgiri/sequenceserver_scripts@latest/sequenceserver-ul-upgrades.js' %>
+</head>
+
+<body>
+<div class="super_container">
+	<%= render partial: 'globals/header' %>
+	<%= yield %>
+	<%= render partial: 'shared/authenticate' %>
+</div>
+<%= render partial: 'globals/footer_small' %>
+
+<%= render partial: 'globals/flashes' %>
+</body>
+</html>

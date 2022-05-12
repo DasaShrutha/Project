@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+	3.1 Top Bar
+	3.2 Header Content
+	3.3 Logo
+	3.4 Main Nav
+	3.5 Hamburger
+4. Menu
+5. Home
+6. Regular
+7. Footer
+
+
+
+******************************/
+
+/*********************************
+5. Home
+*********************************/
+
+.home
+{
+	width: 100%;
+	height: 10em;
+	background: #f8f8f8;
+}
+
+/*********************************
+6. Regular
+*********************************/
+
+.regular
+{
+	width: 100%;
+	padding-top: 80px;
+	padding-bottom: 150px;
+	background: #f8f8f8;
+}
+.regular_content
+{
+	width: 100%;
+	background: #FFFFFF;
+	padding-left: 97px;
+	padding-top: 43px;
+	padding-bottom: 58px;
+	padding-right: 97px;
+	border: solid 1px #ebebeb;
+}
+.regular_title
+{
+	font-family: 'Lato', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	color: rgba(0,0,0,0.9);
+}
+.regular_text
+{
+	margin-top: 29px;
+}
+.regular_text p:not(:last-child)
+{
+	margin-bottom: 32px;
+}

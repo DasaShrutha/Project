@@ -1,0 +1,39 @@
+<div class="home">
+</div>
+
+<div class="regular">
+	<div class="container">
+		<div class="regular_content">
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="regular_title">Map of Singapore</div>
+						</div>
+						<div class="col-md-4">
+							<%= link_to 'Upload Data', '#', class: 'btn btn-sm btn-primary pull-right', data: {toggle: 'modal', target: '#data-upload-modal'} if can? :create, :datum %>
+						</div>
+					</div>
+
+					<div class="regular_text">
+						<div id="data-map" class="ntu_map"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="map-response-container" class="row">
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if can? :create, :datum %>
+	<%= render partial: 'data/form' %>
+<% end %>
+
+<%= render partial: 'shared/loader' %>
+
+<script>
+	new LASeR.Data.Map('data-map', '#map-response-container');
+</script>

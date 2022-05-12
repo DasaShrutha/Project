@@ -1,0 +1,127 @@
+<header class="header">
+	<!-- Top Bar -->
+	<div class="top_bar">
+		<div class="top_bar_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+							<div class="logo_container mr-auto">
+							</div>
+
+							<nav class="main_nav_contaner">
+								<ul class="main_nav">
+									<li class="active"><%= link_to 'Home', home_index_path %></li>
+									<li><%= link_to 'Publications', publications_path %></li>
+									<li><%= link_to 'Media', media_path %></li>
+
+									<li><%= link_to 'Data', data_path if can? :read, :datum %></li>
+									<li><%= link_to 'Search', ENV['SEQUENCESERVER_MOUNT_PATH'] if can? :search, :sequenceserver %></li>
+								</ul>
+							</nav>
+
+							<div class="header_content_right ml-auto text-right">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Header Content -->
+	<div class="header_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="logo_container mr-auto">
+							<%= link_to home_index_path do %>
+								<div class="logo_text">
+									<%= ENV['WEBSITE_NAME'] %>
+									<small><%= "(#{ENV['WEBSITE_SUBTITLE']})" if ENV['WEBSITE_SUBTITLE'].present? %></small>
+								</div>
+							<% end %>
+						</div>
+
+						<div class="header_content_right ml-auto text-right">
+							<% unless devise_controller? %>
+								<% if user_signed_in? %>
+									<div class="user dropdown">
+										<%= link_to '#', class: 'dropdown-toggle', data: {toggle: 'dropdown'}, aria: {haspopup: true, expanded: false} do %>
+											<i class="fa fa-user"></i>
+										<% end %>
+										<ul class="dropdown-menu">
+											<% if can? :access, :rails_admin %>
+												<li class="dropdown-item">
+													<%= link_to rails_admin.dashboard_path do %>
+														<i class="fa fa-cogs"></i>&nbsp;Admin Panel
+													<% end %>
+												</li>
+											<% end %>
+											<li class="dropdown-item">
+												<%= link_to destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to Sign Out?'} do %>
+													<i class="fa fa-sign-out"></i>&nbsp;Sign Out
+												<% end %>
+											</li>
+										</ul>
+									</div>
+								<% else %>
+									<nav class="main_nav_contaner">
+										<ul class="main_nav">
+											<li><%= link_to 'Login/Register', '#', class: 'btn', data: {toggle: 'modal', target: '#user-authenticate-modal'} %></li>
+										</ul>
+									</nav>
+								<% end %>
+							<% end %>
+
+							<!-- Hamburger -->
+							<div class="hamburger menu_mm">
+								<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+	<div class="menu_close_container">
+		<div class="menu_close">
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
+	<nav class="menu_nav">
+		<ul class="menu_mm">
+			<li class="menu_mm"><%= link_to 'Home', home_index_path %></li>
+			<li class="menu_mm"><%= link_to 'Publications', publications_path %></li>
+			<li class="menu_mm"><%= link_to 'Media', media_path %></li>
+			<li class="menu_mm"><%= link_to 'Data', data_path if can? :read, :datum %></li>
+			<li class="menu_mm"><%= link_to 'Search', ENV['SEQUENCESERVER_MOUNT_PATH'] if can? :search, :sequenceserver %></li>
+		</ul>
+	</nav>
+
+	<div class="menu_extra">
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<% if user_signed_in? %>
+					<% if can? :access, :rails_admin %>
+						<li class="menu_mm"><%= link_to 'Admin Panel', rails_admin.dashboard_path %></li>
+					<% end %>
+					<li class="menu_mm">
+						<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to Sign Out?'} %>
+					</li>
+				<% else %>
+					<li class="menu_mm">
+						<%= link_to 'Login/Register', '#', data: {toggle: 'modal', target: '#user-authenticate-modal'} %>
+					</li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</div>

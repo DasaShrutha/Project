@@ -1,0 +1,50 @@
+<!-- Contact Map -->
+<div class="contact_map">
+	<div class="map">
+		<div id="contact_map" class="ntu_map"></div>
+	</div>
+</div>
+
+<!-- Contact -->
+<div class="contact">
+	<div class="container">
+		<div class="row row-lg-eq-height">
+
+			<!-- Details -->
+			<div class="col-lg-6">
+				<div class="contact_details">
+					<div class="contact_details_title">Contact Details</div>
+					<ul>
+						<% phone_contact_information = ContactInformation.find_by(contact_type: 'phone') %>
+						<li>
+							<i class="fa <%= phone_contact_information.icon %> fa-lg"></i>
+							<span><%= phone_contact_information.value %></span>
+						</li>
+
+						<% email_contact_information = ContactInformation.find_by(contact_type: 'email') %>
+						<li>
+							<i class="fa <%= email_contact_information.icon %> fa-lg"></i>
+							<span><%= email_contact_information.value %></span>
+						</li>
+
+						<li><br/></li>
+
+						<% address_contact_information = ContactInformation.find_by(contact_type: 'address') %>
+						<li>
+							<i class="fa <%= address_contact_information.icon %> fa-lg"></i>
+							<span><%= address_contact_information.value %></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Form -->
+			<div class="col-lg-6">
+				<div class="contact_form_container">
+					<div class="form_title">Get in Touch</div>
+					<%= render partial: 'contacts/form' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

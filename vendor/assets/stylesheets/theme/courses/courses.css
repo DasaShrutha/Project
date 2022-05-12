@@ -1,0 +1,386 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+	3.1 Top Bar
+	3.2 Header Content
+	3.3 Logo
+	3.4 Main Nav
+	3.5 Hamburger
+4. Menu
+5. Home
+6. Language
+7. Courses
+12. Footer
+
+
+
+******************************/
+
+/*********************************
+5. Home
+*********************************/
+
+.home
+{
+	width: 100%;
+	height: 10em;
+	background: #f8f8f8;
+}
+.breadcrumbs_container
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.breadcrumbs_list
+{
+	width: 100%;
+	height: 49px;
+}
+.breadcrumbs_list li
+{
+	display: inline-block;
+	position: relative;
+	font-size: 12px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.3);
+	letter-spacing: 0.075em;
+	text-transform: uppercase;
+}
+.breadcrumbs_list li a
+{
+	font-size: 12px;
+	font-weight: 600;
+	color: rgba(0,0,0,0.3);
+	text-transform: uppercase;
+	letter-spacing: 0.075em;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.breadcrumbs_list li a:hover
+{
+	color: black;
+}
+.breadcrumbs_list li:not(:last-child)::after
+{
+	display: inline-block;
+	position: relative;
+	font-family: 'FontAwesome';
+	content: '\f111';
+	color: black;
+	font-size: 4px;
+	margin-left: 9px;
+	margin-right: 7px;
+	vertical-align: middle;
+}
+
+/*********************************
+6. Language
+*********************************/
+
+.language
+{
+	width: 100%;
+	padding-top: 78px;
+	padding-bottom: 50px;
+	background: #f8f8f8;
+}
+.language_title
+{
+	font-family: 'Lato', sans-serif;
+	font-size: 40px;
+	font-weight: 700;
+	color: #000000;
+}
+.language_slider_container
+{
+	width: 100%;
+	padding-left: 52px;
+	padding-right: 52px;
+	margin-top: 20px;
+}
+.language_item
+{
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	cursor: pointer;
+}
+.flag
+{
+	width: 50px;
+	margin: 0 auto;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.flag img
+{
+	max-width: 100%;
+}
+.lang_name
+{
+	font-size: 12px;
+	font-weight: 600;
+	color: black;
+	margin-top: 14px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.language_item:hover .lang_name
+{
+	color: rgba(0,0,0,0.8);
+}
+.language_item:hover .flag
+{
+	-webkig-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	-ms-transform: translateY(-10px);
+	-o-transform: translateY(-10px);
+	transform: translateY(-10px);
+	box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+}
+.lang_nav
+{
+	position: absolute;
+	top: 45%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	text-align: center;
+	cursor: pointer;
+}
+.lang_nav i
+{
+	font-size: 18px;
+	line-height: 30px;
+	color: rgba(0,0,0,0.3);
+	font-weight: 700;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.lang_nav:hover i
+{
+	color: rgba(0,0,0,0.8);
+}
+.lang_prev
+{
+	left: -13px;
+}
+.lang_next
+{
+	right: -13px;
+}
+
+/*********************************
+7. Courses
+*********************************/
+
+.courses
+{
+	padding-bottom: 150px;
+	background: #f8f8f8;
+	padding-top: 19px;
+}
+.welcome_title
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.9);
+}
+.courses_row
+{
+	margin-top: 2em;
+}
+.course_col
+{
+	margin-bottom: 30px;
+}
+.course
+{
+	border: solid 1px #f1f1f1;
+}
+.course_image
+{
+	width: 100%;
+}
+.course_image img
+{
+	max-width: 100%;
+	object-fit: cover;
+	object-position: top;
+	height: 200px;
+}
+.course_body
+{
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 19px;
+	padding-bottom: 47px;
+	background: #FFFFFF;
+}
+.course_title a
+{
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #000000;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.course_title a:hover
+{
+	color: #2e21df;
+}
+.course_info
+{
+	margin-top: 5px;
+}
+.course_info ul li
+{
+	display: inline-block;
+	position: relative;
+}
+.course_info ul li a
+{
+	font-size: 14px;
+	font-weight: 500;
+	color: black;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.course_info ul li a:hover
+{
+	color: #2e21df;
+}
+.course_info ul li:not(:last-child)::after
+{
+	display: inline-block;
+	font-family: 'FontAwesome';
+	color: #b8b8b8;
+	font-size: 4px;
+	margin-left: 7px;
+	margin-right: 5px;
+	content: '\f111';
+	vertical-align: middle;
+}
+.course_text
+{
+	margin-top: 16px;
+}
+.course_footer
+{
+	width: 100%;
+	height: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-top: solid 1px #ebebeb;
+	background: #FFFFFF;
+}
+.course_students,
+.course_rating
+{
+	color: black;
+}
+.course_students i,
+.course_rating i
+{
+	font-size: 18px;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+.course_mark
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 61px;
+	height: 25px;
+	background: #f9cf0e;
+	border-radius: 3px;
+	text-align: center;
+}
+.course_mark:hover
+{
+	box-shadow: 0px 5px 20px rgba(0,0,0,0.35);
+}
+.course_mark a
+{
+	display: block;
+	font-size: 12px;
+	font-weight: 600;
+	color: #FFFFFF;
+	line-height: 25px;
+}
+.course_free
+{
+	background: #2e21df;
+}
+.load_more_button
+{
+	width: 195px;
+	height: 43px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #f8f8f8;
+	border: solid 1px #dfdfdf;
+	border-radius: 3px;
+	text-align: center;
+	margin-top: 70px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.load_more_button a
+{
+	display: block;
+	font-family: 'Lato', sans-serif;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	line-height: 43px;
+	color: rgba(0,0,0,0.3);
+}
+.load_more_button:hover
+{
+	box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+}

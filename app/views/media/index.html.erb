@@ -1,0 +1,60 @@
+<div class="home">
+</div>
+
+<div class="blog">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="welcome_title">Media</div>
+			</div>
+		</div>
+
+		<div class="row categories_row">
+			<% @categories.each do |category| %>
+				<div class="col-xl-2 col-lg-4 col-md-6 blog_category_col">
+					<%= link_to media_path(category: category.id) do %>
+						<div class="blog_category">
+							<div class="blog_category_image"><img src="http://via.placeholder.com/510x247" alt=""></div>
+							<div class="blog_category_title"><%= category.name %></div>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+
+		<div class="row blog_row">
+			<% @media.each do |medium| %>
+				<div class="col-lg-6">
+					<div class="blog_post">
+						<div class="blog_image">
+							<% if medium.is_video_attached? %>
+								<div class="video_overlay d-flex flex-column align-items-end justify-content-start">
+									<i class="fa fa-youtube-play fa-3x mr-2 mt-1 play-overlay-icon"></i>
+								</div>
+							<% end %>
+							<%= image_tag url_for(medium.preview(resize: '510x247')), width: '100%', height: '100%' %>
+						</div>
+						<div class="blog_title_container">
+							<div class="blog_post_category">
+								<%= medium.categories&.first&.name || '&nbsp;'.html_safe %>
+							</div>
+							<div class="blog_post_title">
+								<%= link_to medium.title, medium %>
+							</div>
+							<div class="blog_post_text">
+								<p>
+									<%= truncate(medium.description, length: 200) %>
+								</p>
+							</div>
+							<div class="read_more">
+								<%= link_to medium do %>
+									More <img src="<%= asset_path 'right.png' %>" alt="">
+								<% end %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

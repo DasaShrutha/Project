@@ -1,0 +1,25 @@
+<div class="modal fade" id="user-authenticate-modal" tabindex="-2" role="dialog" aria-labelledby="user-authenticate-modal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<nav class="nav nav-pills nav-justified">
+					<a class="nav-item nav-link active" data-toggle="tab" href="#login-form">Login</a>
+					<a class="nav-item nav-link" data-toggle="tab" href="#register-form">Register</a>
+				</nav>
+
+				<hr/>
+
+				<div class="tab-content">
+					<div class="tab-pane container active" id="login-form">
+						<%= render partial: 'devise/sessions/new', locals: {remote: true} %>
+					</div>
+					<div class="tab-pane container fade" id="register-form">
+						<%= render partial: 'devise/registrations/new', locals: {remote: true} %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render partial: 'shared/forgot_password' %>

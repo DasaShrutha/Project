@@ -1,0 +1,83 @@
+<div id="new_user_sign_up_alerts" class="alert alert-danger d-none" role="alert">
+	<strong>Alert:</strong>
+	<ul></ul>
+</div>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), remote: !!remote, html: {id: 'new_user_sign_up', data: {type: :json}}) do |f| %>
+	<%= f.error_notification %>
+
+	<div class="form-inputs">
+		<%= f.input :name, required: true, autofocus: true %>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<%= f.association :category, collection: Users::Category.all, required: true, include_blank: 'Select' %>
+			</div>
+
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :institution, required: true %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :designation, required: true %>
+			</div>
+
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :country, as: :string, required: true %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :project, required: true %>
+			</div>
+
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :potential_use_of_data, required: true %>
+			</div>
+		</div>
+
+		<hr/>
+
+		<%= f.input :email, required: true, input_html: {autocomplete: "email"} %>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :password, required: true, input_html: {autocomplete: "off"},
+				            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+			</div>
+
+			<div class="col-md-6 col-sm-12">
+				<%= f.input :password_confirmation, required: true, input_html: {autocomplete: "off"} %>
+			</div>
+		</div>
+
+		<%= recaptcha_tags callback: 'enableSignUpSubmit', expired_callback: 'disableSignUpSubmit' %>
+	</div>
+
+	<div class="form-actions mt-3">
+		<%= f.button :submit, "Sign up", disabled: true, class: 'pull-right' %>
+	</div>
+<% end %>
+
+<script>
+	<% if !!remote %>
+	new LASeR.Authentication.Registrations;
+	<% end %>
+
+	var signUpSubmitButton, enableSignUpSubmit, disableSignUpSubmit = undefined;
+
+	$(document).ready(function () {
+		signUpSubmitButton = $('#new_user_sign_up').find('input[type="submit"]').last();
+
+		enableSignUpSubmit = function () {
+			signUpSubmitButton.removeAttr('disabled');
+		};
+
+		disableSignUpSubmit = function () {
+			signUpSubmitButton.attr('disabled', true);
+		};
+	});
+</script>

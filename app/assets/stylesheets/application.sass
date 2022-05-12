@@ -1,0 +1,221 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require vendor
+ *= require_tree .
+ *= require_self
+ */
+
+.top_bar
+	background-color: #181c62 !important
+
+	*
+		color: white !important
+
+.logo_text
+	color: #181c62 !important
+	line-height: 0.9 !important
+
+.header_content
+	*
+		color: #181c62 !important
+
+	.logo_text > small
+		white-space: nowrap
+
+.hamburger
+	*
+		color: #0054a6 !important
+
+.menu_close
+	*
+		background: #0054a6 !important
+
+.menu_nav
+	*
+		color: #181c62 !important
+
+.menu_extra
+	*
+		color: #181c62 !important
+
+.regular
+	padding: 0 !important
+
+	.regular_title
+		color: #181c62 !important
+
+
+.contact
+	background-color: #181c62 !important
+
+	.contact_details
+
+		*
+			color: white !important
+
+
+	.contact_form_container
+		z-index: 400
+
+		.form_title
+			color: #181c62 !important
+
+
+		.form_button
+			background: #0054a6 !important
+
+
+.footer
+	background-color: #181c62 !important
+
+	.copyright
+		background-color: #181c62 !important
+
+
+	*
+		color: white !important
+
+
+.welcome_title
+	color: #181c62 !important
+
+
+.course
+
+	.course_body
+
+		.course_title
+
+			a
+				color: #181c62 !important
+
+
+	.course_footer
+
+		.course_mark
+
+			a
+				background: #0054a6 !important
+
+
+.blog_post
+
+	.blog_title_container
+
+		.blog_post_title
+
+			a
+				color: #181c62 !important
+
+
+		.read_more
+
+			a
+				color: #0054a6 !important
+
+
+.load_more_button
+
+	a
+		color: white !important
+		background: #0054a6 !important
+
+
+a.data-download-link
+	color: #0054a6 !important
+
+
+.modal-title
+	color: #181c62 !important
+
+
+.modal-submit-button
+	color: white !important
+	background: #0054a6 !important
+
+
+.btn
+	color: white !important
+	background: #0054a6 !important
+
+
+.form-control
+	color: black !important
+
+
+.nav-pills
+
+	*
+		font-weight: bold !important
+
+
+	.nav-link
+		color: #181c62 !important
+
+
+	.active
+		color: white !important
+		background-color: #0054a6 !important
+
+
+.load_more_button
+	margin-top: 50px !important
+
+
+.courses
+	padding-bottom: 50px !important
+
+
+.blog
+	padding-bottom: 50px !important
+
+.dropdown-toggle::after
+	display:none
+
+abbr
+	text-decoration: none !important
+	color: red
+
+.play-overlay-icon
+	color: #0054a6
+
+.breadcrumbs_list
+	li
+		a
+			color: #0054a6 !important
+
+			&:hover
+				color: #181c62 !important
+
+.loader
+	position: fixed
+	bottom: 1em
+	right: 1em
+	z-index: 99
+	padding: 1em
+
+	.loader-spinner
+		border: 0.3em solid #f3f3f3
+		border-top: 0.3em solid #0054a6
+		border-radius: 50%
+		width: 3em
+		height: 3em
+		animation: spin 2s linear infinite
+		display: inline-block
+
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)

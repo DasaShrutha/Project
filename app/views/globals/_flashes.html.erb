@@ -1,0 +1,5 @@
+<script>
+	<% flash.each do |key, message| %>
+	toastr["<%= flash_error_class key %>"]("<%= message %>");
+	<% end %>
+</script>

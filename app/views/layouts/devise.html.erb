@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= (@title.present? ? "#{@title} | " : '') %>LASeR</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
+
+	<%= stylesheet_link_tag 'application' %>
+	<% %w( theme/home theme/regular theme/contact ).each do |stylesheet| %>
+		<%= stylesheet_link_tag stylesheet %>
+	<% end %>
+
+	<%= javascript_include_tag 'application' %>
+	<% %w( theme/custom theme/regular theme/contact ).each do |javascript| %>
+		<%= javascript_include_tag javascript %>
+	<% end %>
+</head>
+
+<body>
+<div class="super_container">
+	<%= render partial: 'globals/header' %>
+
+	<div class="home">
+	</div>
+	<div class="regular">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="regular_content">
+					<%= yield %>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</div>
+<%#= render partial: 'globals/footer_small' %>
+
+<%= render partial: 'globals/flashes' %>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<div class="modal fade" id="data-upload-modal" tabindex="-1" role="dialog" aria-labelledby="data-upload-modal" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<%= simple_form_for @fasta, url: data_path, remote: true, html: {id: 'data-upload', data: {type: :json}} do |f| %>
+				<div class="modal-header">
+					<h4 class="modal-title">Upload Data</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<div id="data-upload-alerts" class="alert alert-danger d-none" role="alert">
+						<strong>Alert:</strong>
+						<ul></ul>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :attachment, label: 'Data File (.fasta/.zip)' %>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :name_of_contributor, label: 'Name of Contributor' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :organization %>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :project %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :location_of_sample_collection, label: 'Location of Sample Collection' %>
+						</div>
+						<div class="col-md-3 col-sm-12">
+							<%= f.input :latitude_notation, label: 'Latitude' %>
+						</div>
+						<div class="col-md-3 col-sm-12">
+							<%= f.input :longitude_notation, label: 'Longitude' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :nature_of_sample, collection: Fasta::NATURE_OF_SAMPLE, label: 'Nature of Sample' %>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :sample_source, collection: Fasta::SAMPLE_SOURCE, label: 'Sample Source' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4 col-sm-12">
+							<%= f.input :temperature, label: 'Temperature (°C)' %>
+						</div>
+						<div class="col-md-4 col-sm-12">
+							<%= f.input :salinity, label: 'Salinity (ppt)' %>
+						</div>
+						<div class="col-md-4 col-sm-12">
+							<%= f.input :depth, label: 'Depth (m)' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<%= f.input :organism_present_in_sample, label: 'Organism Present in Sample' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :type_of_genetic_material_sequenced, collection: Fasta::TYPE_OF_GENETIC_MATERIAL_SEQUENCED, label: 'Type of Genetic Material Sequenced' %>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :source_of_genetic_material, collection: Fasta::SOURCE_OF_GENETIC_MATERIAL, label: 'Source of Genetic Material' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :region_sequenced, label: 'Region Sequenced' %>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :sequencing_technology, label: 'Sequencing Technology' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :phred_quality_score, label: 'Phred Quality Score' %>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<%= f.input :sequence_length, label: 'Sequence Length (bp)' %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<%= f.input :comments, label: 'Any Other Details or Comments' %>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<%= f.button :submit, 'Submit', data: {disable_with: 'Submitting...'}, class: 'btn modal-submit-button' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<script>
+	new LASeR.Data.Upload;
+</script>
