@@ -3,3 +3,4 @@
 #= require toastr/toastr
 #= require leaflet/dist/leaflet
 #= require theme
+#= require highmaps
